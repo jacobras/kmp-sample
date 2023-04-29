@@ -2,7 +2,7 @@ import org.jetbrains.compose.compose
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    alias(libs.plugins.compose)
 }
 
 group = "nl.jacobras.kmpsample"
@@ -31,7 +31,7 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.ui)
 
-                implementation(libs.touchlab.kermit)
+                implementation(libs.kermit)
 
                 implementation(project(":domain"))
                 implementation(project(":sharedui"))
