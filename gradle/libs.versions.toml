@@ -1,5 +1,5 @@
 [versions]
-activity-compose = "1.5.1"
+activity-compose = "1.7.1"
 android-ktx = "1.8.0"
 
 [libraries]
