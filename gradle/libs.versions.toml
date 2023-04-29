@@ -1,0 +1,9 @@
+[versions]
+activity-compose = "1.5.1"
+android-ktx = "1.8.0"
+
+[libraries]
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity-compose" }
+android-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "android-ktx" }
+
+[plugins]

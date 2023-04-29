@@ -37,9 +37,9 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":sharedui"))
 
-    implementation("androidx.core:core-ktx:1.8.0")
+    implementation(libs.android.ktx)
+    implementation(libs.activity.compose)
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation("androidx.activity:activity-compose:1.5.1")
     implementation(platform("androidx.compose:compose-bom:2022.10.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
