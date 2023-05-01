@@ -1,6 +1,6 @@
 [versions]
 activity-compose = "1.7.1"
-android-ktx = "1.8.0"
+android-ktx = "1.10.0"
 android-gradle-plugin = "7.4.2"
 compose-bom = "2022.10.00"
 compose-compiler = "1.4.2"
