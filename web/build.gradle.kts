@@ -2,7 +2,7 @@ import org.jetbrains.compose.compose
 
 plugins {
     kotlin("multiplatform")
-    alias(libs.plugins.compose)
+    alias(libs.plugins.composeWasm)
 }
 
 group = "nl.jacobras.kmpsample"
@@ -23,9 +23,8 @@ kotlin {
     }
 
     sourceSets {
-        val jsMain by getting {
+        val jsWasmMain by creating {
             dependencies {
-                implementation(compose.html.core)
                 implementation(compose.foundation)
                 implementation(compose.material)
                 implementation(compose.runtime)
@@ -36,6 +35,9 @@ kotlin {
                 implementation(project(":domain"))
                 implementation(project(":sharedui"))
             }
+        }
+        val jsMain by getting {
+            dependsOn(jsWasmMain)
         }
         val jsTest by getting {
             dependencies {

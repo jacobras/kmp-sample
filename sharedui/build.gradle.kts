@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    alias(libs.plugins.compose)
+    alias(libs.plugins.composeWasm)
 }
 
 kotlin {

@@ -21,3 +21,4 @@ kermit = { group = "co.touchlab", name = "kermit", version = "1.2.2" }
 
 [plugins]
 compose = { id = "org.jetbrains.compose", version = "1.4.0" }
+composeWasm = { id = "org.jetbrains.compose", version = "1.4.0-dev-wasm08" }
