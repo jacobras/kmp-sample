@@ -41,3 +41,8 @@ compose.desktop {
         }
     }
 }
+
+compose {
+    kotlinCompilerPlugin.set("1.4.0") // TODO: read
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-RC") // TODO: read
+}

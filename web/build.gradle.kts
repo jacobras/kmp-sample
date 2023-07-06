@@ -50,3 +50,8 @@ kotlin {
 compose.experimental {
     web.application {}
 }
+
+compose {
+    kotlinCompilerPlugin.set("1.4.0-dev-wasm08") // TODO: read
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-RC") // TODO: read
+}
