@@ -10,7 +10,7 @@ pluginManagement {
     }
     plugins {
         kotlin("multiplatform").version("1.8.10")
-        id("org.jetbrains.kotlin.android") version "1.8.10"
+        id("org.jetbrains.kotlin.android") version "1.9.20-station-823"
         id("org.jetbrains.kotlin.jvm") version "1.8.10"
     }
 }
