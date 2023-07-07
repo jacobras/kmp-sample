@@ -9,9 +9,13 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
     plugins {
-        kotlin("multiplatform").version("1.8.10")
-        id("org.jetbrains.kotlin.android") version "1.8.10"
-        id("org.jetbrains.kotlin.jvm") version "1.8.10"
+        val kotlinVersion = "1.9.0-RC"
+        val composeVersion = "1.4.0-dev-wasm08" // TODO: read
+
+        kotlin("multiplatform").version(kotlinVersion)
+        id("org.jetbrains.kotlin.android").version(kotlinVersion)
+        id("org.jetbrains.kotlin.jvm").version(kotlinVersion)
+        id("org.jetbrains.compose").version(composeVersion)
     }
 }
 

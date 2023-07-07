@@ -11,6 +11,17 @@ straightforward to add.
 * Jetbrains Compose for UI
 * Touchlab Kermit for logging
 
+### Running the app
+
+#### Android
+`gradlew android:installDebug`
+
+#### Desktop
+`gradlew desktop:run`
+
+#### Web
+`gradlew web:jsRun`
+
 ## Architecture
 
 ![Architectural overview showing Android, Desktop and Web depending on the :sharedui module](docs/images/overview_drawio.png)
@@ -46,9 +57,5 @@ Column(modifier = Modifier.padding(25.dp)) {
 }
 ```
 
-Thanks to this, it's now possible to share Composables between all platforms.
-
-## Known issues
-
-1. The Web canvas doesn't span the full browser window. I gave it a fixed width
-so the content is at least visible.
+Thanks to this, it's now possible to share Composables between all platforms, as this
+repository demonstrates with the `[sharedui]` module.

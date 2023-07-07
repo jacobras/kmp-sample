@@ -1,6 +1,19 @@
 plugins {
+    kotlin("multiplatform")
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.compose")
+}
+
+kotlin {
+    androidTarget()
+    sourceSets {
+        val androidMain by getting {
+            dependencies {
+                implementation(project(":domain"))
+                implementation(project(":sharedui"))
+            }
+        }
+    }
 }
 
 android {
@@ -17,14 +30,8 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "17"
-    }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
     packagingOptions {
         resources {
@@ -34,18 +41,19 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":sharedui"))
-
     implementation(libs.android.ktx)
     implementation(libs.activity.compose)
     implementation(libs.lifecycle.runtime.ktx)
-    implementation(platform(libs.compose.bom))
 
-    implementation(libs.compose.ui)
-    implementation(libs.compose.ui.graphics)
-    implementation(libs.compose.ui.tooling)
-    implementation(libs.compose.material3)
-    debugImplementation(libs.compose.ui.tooling.preview)
-    debugImplementation(libs.compose.ui.test.manifest)
+    implementation(compose.ui)
+//    implementation(compose.ui.graphics)
+    implementation(compose.uiTooling)
+    implementation(compose.material3)
+    debugImplementation(compose.preview)
+    debugImplementation(compose.uiTooling)
+}
+
+compose {
+    kotlinCompilerPlugin.set("1.4.0") // TODO: read
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-RC") // TODO: read
 }
