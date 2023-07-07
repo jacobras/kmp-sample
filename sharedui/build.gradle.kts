@@ -1,11 +1,12 @@
 plugins {
     kotlin("multiplatform")
-    alias(libs.plugins.composeWasm)
+    id("org.jetbrains.compose")
 }
 
 kotlin {
     jvm()
     js(IR) { browser() }
+    wasm { browser() }
 
     sourceSets {
         val commonMain by getting {
