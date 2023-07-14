@@ -29,20 +29,10 @@ kotlin {
                 implementation(compose.material)
                 implementation(compose.runtime)
                 implementation(compose.ui)
-
-                implementation(libs.kermit)
-
-                implementation(project(":domain"))
-                implementation(project(":sharedui"))
             }
         }
         val jsMain by getting {
             dependsOn(jsWasmMain)
-        }
-        val jsTest by getting {
-            dependencies {
-                implementation(kotlin("test-js"))
-            }
         }
     }
 }
@@ -52,6 +42,6 @@ compose.experimental {
 }
 
 compose {
-    kotlinCompilerPlugin.set("1.4.0-dev-wasm08") // TODO: read
-    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-RC") // TODO: read
+    kotlinCompilerPlugin.set("1.4.0-dev-wasm08")
+    kotlinCompilerPluginArgs.add("suppressKotlinVersionCompatibilityCheck=1.9.0-RC")
 }

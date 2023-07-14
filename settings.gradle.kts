@@ -9,9 +9,7 @@ pluginManagement {
         maven("https://maven.pkg.jetbrains.space/kotlin/p/wasm/experimental")
     }
     plugins {
-        kotlin("multiplatform").version("1.8.10")
-        id("org.jetbrains.kotlin.android") version "1.8.10"
-        id("org.jetbrains.kotlin.jvm") version "1.8.10"
+        kotlin("multiplatform").version("1.9.0-RC")
     }
 }
 
@@ -22,8 +20,4 @@ dependencyResolutionManagement {
     }
 }
 
-include(":android")
-include(":desktop")
-include(":domain")
-include(":sharedui")
 include(":web")
